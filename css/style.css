@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lora', serif;
+    background-color: var(--color2);
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+:root{
+    --color1:#876445;
+    --color2:#EEC373;
+    --color3:rgb(251, 250, 250);
+}
+/* header */
+header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+    align-items: center;
+    background-color: var(--color1);
+    top: 0;
+  
+    /* tambahaan  */
+    height: 60px;
+}
+header ul {
+    display: flex;   
+    list-style: none;
+    justify-content: space-between;
+    width: 5%;
+    
+}
+header ul a:hover{
+    text-decoration: underline;
+}
+header .title{
+    letter-spacing: 3px;
+    padding-left: 2%;
+    cursor:pointer;
+
+}
+header .logo{
+    display: flex;
+    justify-content: space-around;
+}
+header ul{
+    width: 40%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+a{
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+}
+/* ============================================== */
+
+/* hero */
+
+#hero{
+    /* border: 2px solid black; */
+
+    margin:50px auto auto;
+    max-width: 1200px;
+    height: 38vw;
+    background-image: url(../aset/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -15px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4)
+}
+/* ============================================== */
+
+/* main */
+main{
+    
+    top: 60px;
+    padding-top: 30px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: rgba(255, 255, 255,.4);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);   
+}
+
+#content{
+  
+    order: 1;
+    max-width: 850px;
+    overflow: auto;
+    padding: 0 40px;
+    
+}
+#title{
+    font-size: 80px;
+}
+#detail{
+    text-align: left;
+}
+#artikel{
+    margin-bottom: 80px;
+}
+#artikel p {
+    text-indent: 30px;
+}
+/* ============================================== */
+#title-ref{
+    text-align: center;
+    text-decoration: underline;
+}
+#reference{
+    margin-bottom: 150px;
+    display: flex;
+}
+.card{
+    border: 1px solid #999;
+    border-radius: 10px;
+    background-color: #eee;    
+    overflow: hidden;
+    margin: 10px;
+    flex: 1;
+}
+.card .header{
+    height: 150px;
+    background-color: #666;
+    background-repeat: no-repeat;
+}
+.card .content{
+    text-align: center;
+}
+
+.first{
+    background-size: cover;
+    background-image: url(../aset/kawah.jpg);
+    
+}
+.second{
+    background-size: cover;
+    background-image: url(../aset/prambanan.jpg);  
+}
+.third{
+    background-size: cover;
+    background-image: url(../aset/bromo.jpg);
+}
+button{
+    border: wheat;
+    padding: 5px;
+    color: wheat;
+    background-color: var(--color1);
+    margin-bottom: 20px;
+}
+/* ============================================== */
+#about{
+    text-align: center;
+    padding-bottom: 100px ;
+    padding: 5px;
+    margin: 100px auto;
+
+ 
+}
+#about h1{
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ============================================== */
+/* aside */
+aside {
+    border-left: 3px solid black;
+   
+    padding: 8px;
+    order:2;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255,.2);
+    text-align: center;
+}
+aside h3{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+aside #photo{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-image: url(../aset/profile.jpeg);
+    background-size: cover;
+    align-self: center;
+}
+
+/* end main */
+
+/* ============================================== */
+/* footer */
+footer{
+    width: 100%;
+    bottom: 0;
+}
+footer p{
+    text-align: center;
+    line-height: 50px ;
+    background-color: var(--color1);
+    height: 50px;
+    color: white;
+
+}
+
+/* burger menu */
+.burger{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.burger input{
+    z-index: 3;
+    position: absolute;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    width: 40px;
+    height: 28px;
+    cursor:pointer
+    
+}
+.burger span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: white;
+    transition: all .6s;
+}
+
+.burger span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.burger span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.burger input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px,-1px);
+}
+.burger input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px,-0px);
+}
+.burger input:checked ~ span:nth-child(3){
+    transform: scale(0);
+}
+
+
+
+/* responsive breakpoint*/
+@media screen and (max-width: 768px) {
+    main{
+        flex-direction: column;
+    }
+    /* content  */
+    #content{
+        width: 100vw;
+    }
+    #artikel p{
+        font-size: .91em;
+    }
+    /* gellery */
+
+    /* aside */
+    aside{
+        width: 100vw;
+        border-top: 4px solid black;
+        border-left: none;
+        margin-bottom: 10px;
+    }
+    aside #photo{
+        height: 125px;
+        width: 125px;
+    }
+    aside p{
+        font-size: .9em; 
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    #reference {
+        flex-direction: column;
+    }
+    .burger{
+        display: flex;
+    }
+    header ul {
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        top: 0;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: -1;
+        background-color: var(--color1);width: 70%;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    header ul.move{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    aside #photo{
+        height: 115px;
+        width: 115px;
+        
+    }
+    #title{
+        font-size: 4rem;
+    }
+
+}       
+
+
